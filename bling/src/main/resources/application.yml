@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: BIGDATA-NEWS
+server:
+  port: 10201
+
+kafka:
+  zookeeper:
+    quorum: master:2181,slave3:2181,slave4:2181
