@@ -110,7 +110,7 @@ public class Kafka2Hbase {
                 kafkaNewsIndexMessage.setDate(kafkaNewsMessage.getDate());
                 kafkaNewsIndexMessage.setNid(kafkaNewsMessage.getNid());
                 kafkaNewsIndexMessage.setTitle(kafkaNewsMessage.getTitle());
-                Put putIndex = new Put(Bytes.toBytes(TopNAlogrithm.getKeyByFeeds(kafkaNewsMessage.getFeeds(), kafkaNewsMessage.getNid())));
+                Put putIndex = new Put(Bytes.toBytes(TopNAlogrithm.getKeyByFeeds(kafkaNewsMessage.getFeeds(), kafkaNewsMessage.getNid(), kafkaNewsMessage.getDate())));
                 putIndex.addColumn(Context.NEWS_TABLE_INDEX_FA, Context.NEWS_TABLE_INDEX_FA_DATA, Bytes.toBytes(JSON.toJSONString(kafkaNewsIndexMessage)));
 
                 putReals.add(putReal);

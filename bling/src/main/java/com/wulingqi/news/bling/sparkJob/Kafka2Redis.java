@@ -91,7 +91,7 @@ public class Kafka2Redis {
         try (Jedis jedis = pool.getResource()) {
             // 行为日志写入redis，包括hotNewsSet和用户feed的增加
             while(stringIterator.hasNext()) {
-                KafkaUserMessage kafkaUserMessage = JSONObject.toJavaObject(JSONObject.parseObject(stringIterator.next()), KafkaUserMessage.class);
+                KafkaUserMessage kafkaUserMessage = JSONObject.parseObject(stringIterator.next(), KafkaUserMessage.class);
                 // 所有用户近期访问的新闻数据
                 jedis.sadd("hotNewsSet", kafkaUserMessage.getNid());
                 // 所有近期新闻数据的点击量+1

@@ -1,5 +1,6 @@
 package com.wulingqi.news.vo;
 
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
 
@@ -16,7 +17,7 @@ public class KafkaUserMessage {
 
     private String nid;
 
-    private LocalTime localTime;
+    private LocalDateTime date;
 
     private List<String> feeds;
 
@@ -36,12 +37,12 @@ public class KafkaUserMessage {
         this.nid = nid;
     }
 
-    public LocalTime getLocalTime() {
-        return localTime;
+    public LocalDateTime getDate() {
+        return date;
     }
 
-    public void setLocalTime(LocalTime localTime) {
-        this.localTime = localTime;
+    public void setDate(LocalDateTime date) {
+        this.date = date;
     }
 
     public List<String> getFeeds() {

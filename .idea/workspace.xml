@@ -1,38 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5309aa67-fa59-4651-a5b7-a1d6391a1b27" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/schedule/Redis2Hbase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/schedule/SimpleTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/sparkJob/Kafka2Hbase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/sparkJob/Kafka2Redis.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bling/src/test/java/com/wulingqi/news/bling/BlingTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/common.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/Context.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/redis_template/UserMoudleRedisTemplate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/test.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/util/DateUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/util/TopNAlogrithm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/FeedsSupport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/KafkaNewsMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/KafkaUserMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/NewsIndexMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/UserMoudle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="5309aa67-fa59-4651-a5b7-a1d6391a1b27" name="Default" comment="add">
+      <change afterPath="$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/core/ServiceCore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/util/RedisUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/UserMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bling/bling.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bling/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bling/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/BlingApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/BlingApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/core/ConsumerKafkaTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bling/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/bling/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bling/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/bling/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bling/target/classes/com/wulingqi/news/BlingApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/bling/target/classes/com/wulingqi/news/BlingApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bling/target/classes/com/wulingqi/news/bling/core/ConsumerKafkaTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bling/target/classes/com/wulingqi/news/bling/core/TestKafka.class" beforeDir="false" afterPath="$PROJECT_DIR$/bling/target/classes/com/wulingqi/news/bling/core/TestKafka.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bling/logs/bling.log" beforeDir="false" afterPath="$PROJECT_DIR$/bling/logs/bling.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/sparkJob/Kafka2Hbase.java" beforeDir="false" afterPath="$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/sparkJob/Kafka2Hbase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/sparkJob/Kafka2Redis.java" beforeDir="false" afterPath="$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/sparkJob/Kafka2Redis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bling/src/test/java/com/wulingqi/news/bling/BlingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/bling/src/test/java/com/wulingqi/news/bling/BlingTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/util/TopNAlogrithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/util/TopNAlogrithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/KafkaNewsMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/KafkaNewsMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/KafkaUserMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/KafkaUserMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/NewsIndexMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/NewsIndexMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/UserMoudle.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/UserMoudle.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/bling/target/" />
@@ -48,29 +32,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/schedule/Redis2Hbase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1173">
-              <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/util/Map.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="383" column="10" selection-start-line="383" selection-start-column="10" selection-end-line="383" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bling/src/test/java/com/wulingqi/news/bling/BlingTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4">
-              <caret line="38" column="32" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
+            <state relative-caret-position="15">
+              <caret line="79" column="123" selection-start-line="79" selection-start-column="123" selection-end-line="79" selection-end-column="123" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,48 +44,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/schedule/SimpleTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+            <state relative-caret-position="214">
+              <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#372#373#0" expanded="true" />
-                <element signature="e#395#396#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/BlingApplication.java">
+        <entry file="file://$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/core/ServiceCore.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/util/DateUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
-              <folding>
-                <element signature="e#271#272#0" expanded="true" />
-                <element signature="e#303#304#0" expanded="true" />
-                <element signature="e#356#357#0" expanded="true" />
-                <element signature="e#398#399#0" expanded="true" />
-                <element signature="e#462#463#0" expanded="true" />
-                <element signature="e#504#505#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/util/TopNAlogrithm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56">
-              <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+            <state relative-caret-position="286">
+              <caret line="57" column="34" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -131,10 +66,65 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/Context.java">
+        <entry file="file://$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="60" selection-start-line="32" selection-start-column="60" selection-end-line="32" selection-end-column="60" />
+            <state relative-caret-position="135">
+              <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/UserMessage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/controller/TestController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hbase/hbase-client/1.3.1/hbase-client-1.3.1-sources.jar!/org/apache/hadoop/hbase/client/Result.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="307" column="20" selection-start-line="307" selection-start-column="20" selection-end-line="307" selection-end-column="20" />
+              <folding>
+                <element signature="e#11591#11597#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/NewsIndexMessage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="28">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#508#509#0" expanded="true" />
+                <element signature="e#535#536#0" expanded="true" />
+                <element signature="e#582#583#0" expanded="true" />
+                <element signature="e#614#615#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/core/TestKafka.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="248">
+              <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -142,20 +132,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/sparkJob/Kafka2Hbase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-978">
-              <caret line="42" column="4" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/sparkJob/Kafka2Redis.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="102" column="27" selection-start-line="102" selection-start-column="27" selection-end-line="102" selection-end-column="27" />
+            <state relative-caret-position="15">
+              <caret line="112" column="73" lean-forward="true" selection-start-line="112" selection-start-column="73" selection-end-line="112" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -196,24 +174,28 @@
         <option value="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/TagSupport.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/FeedsSupport.java" />
         <option value="$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/sparkJob/Redis2Hbase.java" />
-        <option value="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/KafkaUserMessage.java" />
         <option value="$PROJECT_DIR$/bling/pom.xml" />
         <option value="$PROJECT_DIR$/common/pom.xml" />
         <option value="$PROJECT_DIR$/bling/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/redis_template/UserMoudleRedisTemplate.java" />
-        <option value="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/UserMoudle.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/KafkaNewsIndexMessage.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/Context.java" />
-        <option value="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/KafkaNewsMessage.java" />
-        <option value="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/util/TopNAlogrithm.java" />
-        <option value="$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/sparkJob/Kafka2Hbase.java" />
-        <option value="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/NewsIndexMessage.java" />
-        <option value="$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/sparkJob/Kafka2Redis.java" />
         <option value="$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/BlingApplication.java" />
         <option value="$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/schedule/SimpleTask.java" />
-        <option value="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/util/DateUtil.java" />
-        <option value="$PROJECT_DIR$/bling/src/test/java/com/wulingqi/news/bling/BlingTest.java" />
         <option value="$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/schedule/Redis2Hbase.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/UserMessage.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/UserMoudle.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/util/MyRedisUtil.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/util/DateUtil.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/KafkaNewsMessage.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/KafkaUserMessage.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/NewsIndexMessage.java" />
+        <option value="$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/sparkJob/Kafka2Hbase.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/util/RedisUtil.java" />
+        <option value="$PROJECT_DIR$/bling/src/test/java/com/wulingqi/news/bling/BlingTest.java" />
+        <option value="$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/sparkJob/Kafka2Redis.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/util/TopNAlogrithm.java" />
+        <option value="$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/core/ServiceCore.java" />
       </list>
     </option>
   </component>
@@ -305,6 +287,17 @@
               <item name="news" type="462c0819:PsiDirectoryNode" />
               <item name="bling" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="news" type="b2602c69:ProjectViewProjectNode" />
+              <item name="news" type="462c0819:PsiDirectoryNode" />
+              <item name="bling" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="news" type="462c0819:PsiDirectoryNode" />
+              <item name="bling" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="news" type="b2602c69:ProjectViewProjectNode" />
@@ -417,10 +410,6 @@
               <item name="news" type="462c0819:PsiDirectoryNode" />
               <item name="vo" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="news" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -428,9 +417,10 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="GO_FMT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554558559487" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554642016541" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="D:/software/nodjs/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -438,7 +428,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -457,7 +447,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.BlingTest.testRedis2Hbase">
+  <component name="RunManager" selected="JUnit.BlingTest.testLocalTime">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -495,6 +485,23 @@
       <option name="PACKAGE_NAME" value="com.wulingqi.news.bling" />
       <option name="MAIN_CLASS_NAME" value="com.wulingqi.news.bling.BlingTest" />
       <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BlingTest.testLocalTime" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bling" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wulingqi.news.bling.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.wulingqi.news.bling" />
+      <option name="MAIN_CLASS_NAME" value="com.wulingqi.news.bling.BlingTest" />
+      <option name="METHOD_NAME" value="testLocalTime" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
@@ -571,9 +578,11 @@
       <item itemvalue="JUnit.BlingTest.test" />
       <item itemvalue="JUnit.BlingTest.testRedis2Hbase" />
       <item itemvalue="Spring Boot.BlingApplication" />
+      <item itemvalue="JUnit.BlingTest.testLocalTime" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BlingTest.testLocalTime" />
         <item itemvalue="JUnit.BlingTest.testRedis2Hbase" />
         <item itemvalue="JUnit.BlingTest.testRedis" />
         <item itemvalue="JUnit.BlingTest.test" />
@@ -600,49 +609,57 @@
       <workItem from="1554196831887" duration="24691000" />
       <workItem from="1554285641892" duration="27359000" />
       <workItem from="1554370355428" duration="3661000" />
-      <workItem from="1554529999311" duration="17254000" />
+      <workItem from="1554529999311" duration="33189000" />
     </task>
+    <task id="LOCAL-00001" summary="add">
+      <created>1554558730565</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1554558730565</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="BlingTest_testRedis2Hbase - 2019.04.06 at 09h 03m 57s.xml">
-      <configuration name="BlingTest.testRedis2Hbase" configurationId="JUnit" />
+    <history-entry file="BlingTest_testLocalTime - 2019.04.07 at 16h 37m 31s.xml">
+      <configuration name="BlingTest.testLocalTime" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BlingTest_testRedis2Hbase - 2019.04.06 at 20h 47m 17s.xml">
-      <configuration name="BlingTest.testRedis2Hbase" configurationId="JUnit" />
+    <history-entry file="BlingTest_testLocalTime - 2019.04.07 at 16h 41m 40s.xml">
+      <configuration name="BlingTest.testLocalTime" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BlingTest_testRedis2Hbase - 2019.04.06 at 20h 47m 48s.xml">
-      <configuration name="BlingTest.testRedis2Hbase" configurationId="JUnit" />
+    <history-entry file="BlingTest_testLocalTime - 2019.04.07 at 16h 44m 07s.xml">
+      <configuration name="BlingTest.testLocalTime" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BlingTest_testRedis2Hbase - 2019.04.06 at 20h 56m 01s.xml">
-      <configuration name="BlingTest.testRedis2Hbase" configurationId="JUnit" />
+    <history-entry file="BlingTest_testLocalTime - 2019.04.07 at 16h 44m 47s.xml">
+      <configuration name="BlingTest.testLocalTime" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BlingTest_testRedis2Hbase - 2019.04.06 at 20h 56m 33s.xml">
-      <configuration name="BlingTest.testRedis2Hbase" configurationId="JUnit" />
+    <history-entry file="BlingTest_testLocalTime - 2019.04.07 at 16h 52m 43s.xml">
+      <configuration name="BlingTest.testLocalTime" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BlingTest_testRedis2Hbase - 2019.04.06 at 21h 14m 50s.xml">
-      <configuration name="BlingTest.testRedis2Hbase" configurationId="JUnit" />
+    <history-entry file="BlingTest_testLocalTime - 2019.04.07 at 16h 55m 48s.xml">
+      <configuration name="BlingTest.testLocalTime" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BlingTest_testRedis2Hbase - 2019.04.06 at 21h 16m 54s.xml">
-      <configuration name="BlingTest.testRedis2Hbase" configurationId="JUnit" />
+    <history-entry file="BlingTest_testLocalTime - 2019.04.07 at 19h 42m 41s.xml">
+      <configuration name="BlingTest.testLocalTime" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BlingTest_testRedis2Hbase - 2019.04.06 at 21h 19m 29s.xml">
-      <configuration name="BlingTest.testRedis2Hbase" configurationId="JUnit" />
+    <history-entry file="BlingTest_testLocalTime - 2019.04.07 at 19h 43m 51s.xml">
+      <configuration name="BlingTest.testLocalTime" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BlingTest_testRedis2Hbase - 2019.04.06 at 21h 20m 00s.xml">
-      <configuration name="BlingTest.testRedis2Hbase" configurationId="JUnit" />
+    <history-entry file="BlingTest_testLocalTime - 2019.04.07 at 19h 46m 16s.xml">
+      <configuration name="BlingTest.testLocalTime" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BlingTest_testRedis2Hbase - 2019.04.06 at 21h 20m 26s.xml">
-      <configuration name="BlingTest.testRedis2Hbase" configurationId="JUnit" />
+    <history-entry file="BlingTest_testLocalTime - 2019.04.07 at 19h 50m 31s.xml">
+      <configuration name="BlingTest.testLocalTime" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83416000" />
+    <option name="totallyTimeSpent" value="99351000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="724" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49683544" visible="true" weight="0.23990306" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49683544" visible="true" weight="0.2463651" />
       <window_info id="Structure" order="1" sideWeight="0.5031645" side_tool="true" weight="0.23021002" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -653,8 +670,8 @@
       <window_info anchor="bottom" id="Duplicate detector" weight="0.32911393" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.101265825" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.10443038" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.1693038" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.23734178" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -690,129 +707,11 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add" />
+    <option name="LAST_COMMIT_MESSAGE" value="add" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/2.0.8.RELEASE/spring-data-redis-2.0.8.RELEASE-sources.jar!/org/springframework/data/redis/core/ValueOperations.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="91" column="6" selection-start-line="91" selection-start-column="6" selection-end-line="91" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bling/src/main/resources/banner.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="57" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/5.0.7.RELEASE/spring-test-5.0.7.RELEASE.jar!/org/springframework/test/context/junit4/SpringJUnit4ClassRunner.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="126" selection-start-line="126" selection-end-line="126" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/runners/ParentRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="294" selection-start-line="294" selection-end-line="294" />
-          <folding>
-            <element signature="e#2922#2923#0" expanded="true" />
-            <element signature="e#2966#2967#0" expanded="true" />
-            <element signature="e#11040#11204#0" expanded="true" />
-            <element signature="e#11203#11204#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/5.0.7.RELEASE/spring-test-5.0.7.RELEASE.jar!/org/springframework/test/context/junit4/statements/RunAfterTestMethodCallbacks.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/5.0.7.RELEASE/spring-test-5.0.7.RELEASE.jar!/org/springframework/test/context/junit4/statements/RunAfterTestExecutionCallbacks.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/2.9.0/jedis-2.9.0.jar!/redis/clients/jedis/Jedis.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/2.9.0/jedis-2.9.0-sources.jar!/redis/clients/jedis/JedisPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-977">
-          <caret line="107" column="9" selection-start-line="107" selection-start-column="9" selection-end-line="107" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/redis_template/UserMoudleRedisTemplate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.56/fastjson-1.2.56.jar!/com/alibaba/fastjson/parser/DefaultJSONParser.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1306" selection-start-line="1306" selection-end-line="1306" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/2.9.0/jedis-2.9.0-sources.jar!/redis/clients/jedis/AdvancedJedisCommands.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="2992" column="25" selection-start-line="2992" selection-start-column="25" selection-end-line="2992" selection-end-column="25" />
-          <folding>
-            <element signature="e#117893#117894#0" expanded="true" />
-            <element signature="e#117955#117956#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/2.9.0/jedis-2.9.0-sources.jar!/redis/clients/jedis/Builder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/2.9.0/jedis-2.9.0-sources.jar!/redis/clients/jedis/BuilderFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="62">
@@ -859,10 +758,265 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/2.9.0/jedis-2.9.0-sources.jar!/redis/clients/jedis/Connection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="123" column="23" selection-start-line="123" selection-start-column="23" selection-end-line="123" selection-end-column="23" />
+          <folding>
+            <element signature="e#7493#7494#0" expanded="true" />
+            <element signature="e#7569#7570#0" expanded="true" />
+            <element signature="e#7912#7913#0" expanded="true" />
+            <element signature="e#7976#7977#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/2.9.0/jedis-2.9.0-sources.jar!/redis/clients/jedis/ScriptingCommands.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bling/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/2.9.0/jedis-2.9.0-sources.jar!/redis/clients/jedis/SortingParams.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="78" column="23" selection-start-line="78" selection-start-column="23" selection-end-line="78" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/time/DayOfWeek.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="108" column="12" selection-start-line="108" selection-start-column="12" selection-end-line="108" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/util/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="383" column="10" selection-start-line="383" selection-start-column="10" selection-end-line="383" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/BlingApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/Context.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="32" column="58" selection-start-line="32" selection-start-column="58" selection-end-line="32" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hbase/hbase-client/1.3.1/hbase-client-1.3.1-sources.jar!/org/apache/hadoop/hbase/client/Connection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="54" column="17" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hadoop/hadoop-common/2.5.1/hadoop-common-2.5.1.jar!/org/apache/hadoop/conf/Configuration.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="82" column="13" selection-start-line="82" selection-start-column="13" selection-end-line="82" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hbase/hbase-client/1.3.1/hbase-client-1.3.1-sources.jar!/org/apache/hadoop/hbase/client/Table.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="168" column="9" selection-start-line="168" selection-start-column="9" selection-end-line="168" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hbase/hbase-client/1.3.1/hbase-client-1.3.1-sources.jar!/org/apache/hadoop/hbase/client/Get.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="89" column="9" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hbase/hbase-common/1.3.1/hbase-common-1.3.1-sources.jar!/org/apache/hadoop/hbase/Cell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="210" column="4" selection-start-line="210" selection-start-column="4" selection-end-line="210" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hbase/hbase-common/1.3.1/hbase-common-1.3.1-sources.jar!/org/apache/hadoop/hbase/CellUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="88" column="23" selection-start-line="88" selection-start-column="23" selection-end-line="88" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="543" column="6" selection-start-line="543" selection-start-column="6" selection-end-line="543" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bling/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="22" column="48" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/util/DateUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+          <folding>
+            <element signature="e#281#282#0" expanded="true" />
+            <element signature="e#313#314#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/time/LocalTime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="124" column="19" selection-start-line="124" selection-start-column="19" selection-end-line="124" selection-end-column="19" />
+          <folding>
+            <element signature="e#7775#7776#0" expanded="true" />
+            <element signature="e#7828#7829#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/time/format/DateTimeFormatter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2769">
+          <caret line="482" column="19" selection-start-line="482" selection-start-column="19" selection-end-line="482" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/time/LocalDate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
+        <state relative-caret-position="15">
           <caret line="136" column="19" selection-start-line="136" selection-start-column="19" selection-end-line="136" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/FeedsSupport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#440#441#0" expanded="true" />
+            <element signature="e#466#467#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/KafkaUserMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-172">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#657#658#0" expanded="true" />
+            <element signature="e#684#685#0" expanded="true" />
+            <element signature="e#731#732#0" expanded="true" />
+            <element signature="e#763#764#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/KafkaNewsMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#523#524#0" expanded="true" />
+            <element signature="e#550#551#0" expanded="true" />
+            <element signature="e#597#598#0" expanded="true" />
+            <element signature="e#629#630#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/util/RedisUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="25" column="41" lean-forward="true" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#658#659#0" expanded="true" />
+            <element signature="e#699#700#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/2.9.0/jedis-2.9.0-sources.jar!/redis/clients/jedis/Protocol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="237" column="26" selection-start-line="237" selection-start-column="26" selection-end-line="237" selection-end-column="26" />
+          <folding>
+            <element signature="e#7908#7909#0" expanded="true" />
+            <element signature="e#7936#7937#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/2.9.0/jedis-2.9.0-sources.jar!/redis/clients/jedis/BinaryClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="127" column="19" selection-start-line="127" selection-start-column="19" selection-end-line="127" selection-end-column="19" />
+          <folding>
+            <element signature="e#3199#3200#0" expanded="true" />
+            <element signature="e#3233#3234#0" expanded="true" />
+            <element signature="e#4579#4580#0" expanded="true" />
+            <element signature="e#4612#4613#0" expanded="true" />
+            <element signature="e#7381#7382#0" expanded="true" />
+            <element signature="e#7416#7417#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/2.9.0/jedis-2.9.0-sources.jar!/redis/clients/jedis/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="60" column="5" lean-forward="true" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
+          <folding>
+            <element signature="e#1719#1720#0" expanded="true" />
+            <element signature="e#1760#1761#0" expanded="true" />
+            <element signature="e#6555#6556#0" expanded="true" />
+            <element signature="e#6597#6598#0" expanded="true" />
+            <element signature="e#29442#29443#0" expanded="true" />
+            <element signature="e#29492#29493#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/2.9.0/jedis-2.9.0-sources.jar!/redis/clients/jedis/Jedis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="177" column="15" selection-start-line="177" selection-start-column="15" selection-end-line="177" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#963#964#0" expanded="true" />
+            <element signature="e#990#991#0" expanded="true" />
+            <element signature="e#118939#118940#0" expanded="true" />
+            <element signature="e#118986#118987#0" expanded="true" />
+            <element signature="e#119294#119302#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -877,208 +1031,42 @@
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/2.9.0/jedis-2.9.0-sources.jar!/redis/clients/jedis/JedisCommands.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="96" column="22" selection-start-line="96" selection-start-column="22" selection-end-line="96" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/KafkaNewsMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="152">
+          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/UserMoudle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+        <state relative-caret-position="112">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#394#395#0" expanded="true" />
-            <element signature="e#433#434#0" expanded="true" />
-            <element signature="e#463#464#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/2.9.0/jedis-2.9.0-sources.jar!/redis/clients/jedis/Protocol.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="214" column="15" selection-start-line="214" selection-start-column="15" selection-end-line="214" selection-end-column="15" />
-          <folding>
-            <element signature="e#7908#7909#0" expanded="true" />
-            <element signature="e#7936#7937#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/2.9.0/jedis-2.9.0-sources.jar!/redis/clients/jedis/Connection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="123" column="23" selection-start-line="123" selection-start-column="23" selection-end-line="123" selection-end-column="23" />
-          <folding>
-            <element signature="e#7493#7494#0" expanded="true" />
-            <element signature="e#7569#7570#0" expanded="true" />
-            <element signature="e#7912#7913#0" expanded="true" />
-            <element signature="e#7976#7977#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/2.9.0/jedis-2.9.0-sources.jar!/redis/clients/jedis/BinaryClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="1206" column="14" selection-start-line="1206" selection-start-column="14" selection-end-line="1206" selection-end-column="14" />
-          <folding>
-            <element signature="e#4579#4580#0" expanded="true" />
-            <element signature="e#4612#4613#0" expanded="true" />
-            <element signature="e#7381#7382#0" expanded="true" />
-            <element signature="e#7416#7417#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/2.9.0/jedis-2.9.0-sources.jar!/redis/clients/jedis/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="902" column="5" selection-start-line="902" selection-start-column="5" selection-end-line="902" selection-end-column="5" />
-          <folding>
-            <element signature="e#6555#6556#0" expanded="true" />
-            <element signature="e#6597#6598#0" expanded="true" />
-            <element signature="e#29442#29443#0" expanded="true" />
-            <element signature="e#29492#29493#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/2.9.0/jedis-2.9.0-sources.jar!/redis/clients/jedis/ScriptingCommands.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/KafkaUserMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#396#397#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bling/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bling/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="48" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/2.9.0/jedis-2.9.0-sources.jar!/redis/clients/jedis/SortingParams.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="78" column="23" selection-start-line="78" selection-start-column="23" selection-end-line="78" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/2.9.0/jedis-2.9.0-sources.jar!/redis/clients/jedis/Jedis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="1668" column="22" selection-start-line="1668" selection-start-column="22" selection-end-line="1668" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#963#964#0" expanded="true" />
-            <element signature="e#990#991#0" expanded="true" />
-            <element signature="e#118939#118940#0" expanded="true" />
-            <element signature="e#118986#118987#0" expanded="true" />
-            <element signature="e#119294#119302#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/time/DayOfWeek.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.56/fastjson-1.2.56.jar!/com/alibaba/fastjson/JSON.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="123">
-          <caret line="108" column="12" selection-start-line="108" selection-start-column="12" selection-end-line="108" selection-end-column="12" />
+          <caret line="396" column="30" selection-start-line="396" selection-start-column="30" selection-end-line="396" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/FeedsSupport.java">
+    <entry file="file://$PROJECT_DIR$/bling/src/test/java/com/wulingqi/news/bling/BlingTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#440#441#0" expanded="true" />
-            <element signature="e#466#467#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/NewsIndexMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="50" column="16" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/time/LocalTime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="243" column="17" lean-forward="true" selection-start-line="243" selection-start-column="17" selection-end-line="243" selection-end-column="17" />
-          <folding>
-            <element signature="e#7775#7776#0" expanded="true" />
-            <element signature="e#7828#7829#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/util/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="383" column="10" selection-start-line="383" selection-start-column="10" selection-end-line="383" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/schedule/Redis2Hbase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1173">
-          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+        <state relative-caret-position="556">
+          <caret line="89" column="98" selection-start-line="89" selection-start-column="98" selection-end-line="89" selection-end-column="98" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/schedule/SimpleTask.java">
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/util/TopNAlogrithm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#372#373#0" expanded="true" />
-            <element signature="e#395#396#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/sparkJob/Kafka2Hbase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-978">
-          <caret line="42" column="4" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
+        <state relative-caret-position="290">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1087,7 +1075,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/sparkJob/Kafka2Redis.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
+        <state relative-caret-position="290">
           <caret line="102" column="27" selection-start-line="102" selection-start-column="27" selection-end-line="102" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1095,52 +1083,95 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/BlingApplication.java">
+    <entry file="file://$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/sparkJob/Kafka2Hbase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bling/src/test/java/com/wulingqi/news/bling/BlingTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4">
-          <caret line="38" column="32" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
+        <state relative-caret-position="15">
+          <caret line="112" column="73" lean-forward="true" selection-start-line="112" selection-start-column="73" selection-end-line="112" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/util/DateUtil.java">
+    <entry file="file://$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/schedule/SimpleTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
-          <folding>
-            <element signature="e#271#272#0" expanded="true" />
-            <element signature="e#303#304#0" expanded="true" />
-            <element signature="e#356#357#0" expanded="true" />
-            <element signature="e#398#399#0" expanded="true" />
-            <element signature="e#462#463#0" expanded="true" />
-            <element signature="e#504#505#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/util/TopNAlogrithm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+        <state relative-caret-position="214">
+          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/Context.java">
+    <entry file="file://$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/schedule/Redis2Hbase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="60" selection-start-line="32" selection-start-column="60" selection-end-line="32" selection-end-column="60" />
+        <state relative-caret-position="15">
+          <caret line="79" column="123" selection-start-line="79" selection-start-column="123" selection-end-line="79" selection-end-column="123" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/core/TestKafka.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/NewsIndexMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#508#509#0" expanded="true" />
+            <element signature="e#535#536#0" expanded="true" />
+            <element signature="e#582#583#0" expanded="true" />
+            <element signature="e#614#615#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hbase/hbase-client/1.3.1/hbase-client-1.3.1-sources.jar!/org/apache/hadoop/hbase/client/Result.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="307" column="20" selection-start-line="307" selection-start-column="20" selection-end-line="307" selection-end-column="20" />
+          <folding>
+            <element signature="e#11591#11597#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/controller/TestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/vo/UserMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/core/ServiceCore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="57" column="34" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
         </state>
       </provider>
     </entry>

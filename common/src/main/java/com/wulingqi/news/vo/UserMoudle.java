@@ -18,16 +18,6 @@ public class UserMoudle {
 
     private List<String> feeds;
 
-    private Integer hot;
-
-    public Integer getHot() {
-        return hot;
-    }
-
-    public void setHot(Integer hot) {
-        this.hot = hot;
-    }
-
     public String getUid() {
         return uid;
     }

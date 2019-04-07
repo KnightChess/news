@@ -1,6 +1,7 @@
 package com.wulingqi.news.vo;
 
 
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 /**
@@ -14,7 +15,7 @@ public class NewsIndexMessage {
 
     private String nid;
 
-    private LocalTime date;
+    private LocalDateTime date;
 
     private String title;
 
@@ -28,11 +29,11 @@ public class NewsIndexMessage {
         this.nid = nid;
     }
 
-    public LocalTime getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(LocalTime date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 

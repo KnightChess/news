@@ -1,5 +1,6 @@
 package com.wulingqi.news.vo;
 
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
 import java.util.Map;
@@ -20,17 +21,17 @@ public class KafkaNewsMessage {
 
     private String author;
 
-    private LocalTime date;
+    private LocalDateTime date;
 
     private String text;
 
     private List<String> feeds;
 
-    public LocalTime getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(LocalTime date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 
