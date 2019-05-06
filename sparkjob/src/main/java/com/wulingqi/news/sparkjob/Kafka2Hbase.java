@@ -1,11 +1,11 @@
-package com.wulingqi.news.bling.sparkJob;
+package com.wulingqi.news.sparkjob;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.wulingqi.news.Context;
 import com.wulingqi.news.util.TopNAlogrithm;
-import com.wulingqi.news.vo.NewsIndexMessage;
 import com.wulingqi.news.vo.KafkaNewsMessage;
+import com.wulingqi.news.vo.NewsIndexMessage;
 import kafka.serializer.StringDecoder;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.HBaseConfiguration;

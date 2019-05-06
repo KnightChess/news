@@ -1,4 +1,4 @@
-package com.wulingqi.news.bling.sparkJob;
+package com.wulingqi.news.sparkjob;
 
 import com.alibaba.fastjson.JSONObject;
 import com.wulingqi.news.vo.KafkaUserMessage;
@@ -75,8 +75,13 @@ public class Kafka2Redis {
             return messageValue;
         }).cache();
 
-        logger.info("every rdd message to hbase");
+        logger.info("every rdd message to redis");
         messageStream.foreachRDD(rdd -> rdd.foreachPartition((VoidFunction<Iterator<String>>) Kafka2Redis::writeToRedis));
+
+        JavaDStream<KafkaUserMessage> dataTran = messageStream.map(obj -> {
+            KafkaUserMessage kafkaUserMessage = JSONObject.parseObject(obj, KafkaUserMessage.class);
+            return kafkaUserMessage;
+        });
 
         try {
             javaStreamingContext.start();

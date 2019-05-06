@@ -11,6 +11,7 @@
     <modules>
         <module>bling</module>
         <module>common</module>
+        <module>sparkjob</module>
     </modules>
 
     <parent>
@@ -19,5 +20,21 @@
         <version>2.0.3.RELEASE</version>
     </parent>
 
-    
+    <repositories>
+        <repository>
+            <id>ali</id>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>cloudera</id>
+            <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
 </project>

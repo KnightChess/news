@@ -16,4 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("new")
 public class UserController {
     private Logger logger = LoggerFactory.getLogger(UserController.class);
+
+    //TODO 热点数据入redis
 }

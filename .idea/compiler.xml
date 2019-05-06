@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="bling" />
         <module name="common" />
+        <module name="sparkjob" />
       </profile>
     </annotationProcessing>
   </component>
@@ -15,6 +16,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="bling" options="-parameters" />
       <module name="common" options="-parameters" />
+      <module name="sparkjob" options="-parameters" />
     </option>
   </component>
 </project>
