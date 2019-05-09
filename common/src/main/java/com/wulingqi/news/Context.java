@@ -31,4 +31,9 @@ public interface Context {
     byte[] USER_FEED_TABLE_NAME = Bytes.toBytes("feeds");
     byte[] USER_FEED_TABLE_FA = Bytes.toBytes("data");
     byte[] USER_FEED_TABLE_FA_DATA = Bytes.toBytes("feeds");
+
+    // 热点数据表
+    byte[] HOT_NEWS_TABLE_NAME = Bytes.toBytes("hot_new");
+    byte[] HOT_NEWS_TABLE_FA = Bytes.toBytes("data");
+    byte[] HOT_NEWS_TABLE_FA_DATA = Bytes.toBytes("message");
 }

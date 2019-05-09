@@ -2,6 +2,7 @@ package com.wulingqi.news.bling.schedule;
 
 import com.alibaba.fastjson.JSON;
 import com.wulingqi.news.Context;
+import com.wulingqi.news.vo.HotNewsMessage;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.HBaseConfiguration;
 import org.apache.hadoop.hbase.TableName;
@@ -18,10 +19,8 @@ import redis.clients.jedis.*;
 import java.io.IOException;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Created with IntelliJ IDEA.
@@ -47,7 +46,13 @@ public class Redis2Hbase {
         pool = new JedisPool(jedisPoolConfig, "localhost", 6379, 3000);
     }
 
-    public void userMoudleRedis2Hbase() throws Exception{
+    //TODO 60分钟入录一次
+    /**
+     * 用户画像入库
+     *
+     * @throws Exception
+     */
+    public void userMoudleRedis2Hbase() {
         logger.info("begin load userMoudle to hbase");
         Configuration configuration = HBaseConfiguration.create();
         configuration.set("hbase.zookeeper.quorum", zookeeperQuorum);
@@ -72,17 +77,57 @@ public class Redis2Hbase {
 
         // 开始写入本地缓存
         logger.info("build put list");
-        Table table = getConnection(configuration).getTable(TableName.valueOf(Context.USER_FEED_TABLE_NAME));
-        List<Put> list = new ArrayList<>();
-        for (Map.Entry<String, List<String>> entry :
-                result.entrySet()) {
-            Put put = new Put(Bytes.toBytes(entry.getKey()));
-            put.addColumn(Context.USER_FEED_TABLE_FA, Context.USER_FEED_TABLE_FA_DATA, Bytes.toBytes(JSON.toJSONString(entry.getValue())));
-            list.add(put);
+        try(Table table = getConnection(configuration).getTable(TableName.valueOf(Context.USER_FEED_TABLE_NAME))) {
+            List<Put> list = new ArrayList<>();
+            for (Map.Entry<String, List<String>> entry :
+                    result.entrySet()) {
+                Put put = new Put(Bytes.toBytes(entry.getKey()));
+                put.addColumn(Context.USER_FEED_TABLE_FA, Context.USER_FEED_TABLE_FA_DATA, Bytes.toBytes(JSON.toJSONString(entry.getValue())));
+                list.add(put);
+            }
+            // 写入hbase
+            logger.info("write to hbase");
+            table.put(list);
+        } catch (Exception e) {
+            logger.error("write to hbase error", e);
         }
-        // 写入hbase
-        logger.info("write to hbase");
-        table.put(list);
+    }
+
+    //TODO 热点新闻入录hbase，也是一天一次
+    public void hotNewsRedis2Hbase() {
+        logger.info("begin load hotNews to hbase");
+        Configuration configuration = HBaseConfiguration.create();
+        configuration.set("hbase.zookeeper.quorum", zookeeperQuorum);
+        configuration.set("hbase.zookeeper.property.clientPort", "2181");
+
+        try (Jedis jedis = pool.getResource()) {
+            logger.info("begin get from redis");
+            Set<String> hotNewsSet = jedis.smembers("hotNewsSet");
+            List<String> keyList = hotNewsSet.stream().map(x -> "hot:" + x).collect(Collectors.toList());
+            List<String> valueList = jedis.mget(keyList.toArray(new String[0]));
+
+            HotNewsMessage hotNewsMessage = new HotNewsMessage();
+            List<Put> putList = new ArrayList<>();
+            Iterator<String> keyIterator = keyList.iterator();
+            Iterator<String> valueIterator = valueList.iterator();
+            String key = null;
+            long click;
+            while (keyIterator.hasNext() && valueIterator.hasNext()) {
+                key = keyIterator.next();
+                click = Long.valueOf(valueIterator.next());
+                if (click < 100) continue;
+                hotNewsMessage.setNid(key);
+                hotNewsMessage.setClicks(click);
+                Put put = new Put(Bytes.toBytes(key));
+                put.addColumn(Context.HOT_NEWS_TABLE_FA, Context.HOT_NEWS_TABLE_FA_DATA, Bytes.toBytes(JSON.toJSONString(hotNewsMessage)));
+                putList.add(put);
+            }
+            try (Table table = getConnection(configuration).getTable(TableName.valueOf(Context.HOT_NEWS_TABLE_NAME))) {
+                table.put(putList);
+            } catch (Exception e) {
+                logger.error("write to hbase error", e);
+            }
+        }
     }
 
     public static Connection getConnection(Configuration configuration) throws IOException {

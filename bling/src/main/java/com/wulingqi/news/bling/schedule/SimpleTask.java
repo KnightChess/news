@@ -21,4 +21,9 @@ public class SimpleTask {
     public void reflushWeek() {
         DateUtil.setDayOfWeek(LocalDate.now().getDayOfWeek());
     }
+
+    //TODO 每两天定时清理redis数据(日期前缀)
+
+    //TODO hbase热点索引数据加载进Redis
+
 }

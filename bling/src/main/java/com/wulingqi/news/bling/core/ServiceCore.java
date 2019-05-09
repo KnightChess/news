@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.wulingqi.news.Context;
 import com.wulingqi.news.util.RedisUtil;
 import com.wulingqi.news.util.TopNAlogrithm;
+import com.wulingqi.news.vo.HotNewsMessage;
 import com.wulingqi.news.vo.KafkaNewsMessage;
 import com.wulingqi.news.vo.NewsIndexMessage;
 import com.wulingqi.news.vo.UserMessage;
@@ -43,6 +44,12 @@ public class ServiceCore {
     Connection connection = null;
     private static String zookeeperQuorum = "xxxx,aaaa,kkkk";
 
+    /**
+     * 注册
+     *
+     * @param userMessage
+     * @return
+     */
     public String register(UserMessage userMessage) {
         Configuration configuration = HBaseConfiguration.create();
         configuration.set("hbase.zookeeper.quorum", zookeeperQuorum);
@@ -118,11 +125,13 @@ public class ServiceCore {
                 Result result = table.get(get);
                 List<Cell> cells = result.getColumnCells(Context.USER_FEED_TABLE_FA, Context.USER_FEED_TABLE_FA_DATA);
                 if (cells.isEmpty()) {
+                    //TODO 如果是null，说明没有用户的实时画像，用热点推荐
                     return null;
                 }
                 Cell cell = cells.get(0);
                 String message = Arrays.toString(CellUtil.cloneValue(cell));
                 List<String> feeds = JSONArray.parseArray(message, String.class);
+                jedis.sadd(uid + ":feedSet", feeds.toArray(new String[0]));
                 return feeds;
             }
         } catch (Exception e) {
@@ -181,6 +190,57 @@ public class ServiceCore {
         }
     }
 
+    //TODO 获取热点新闻索引并写入Redis
+    //TODO hot_new表加个starKey为"0000"的
+    public List<HotNewsMessage> getHotNewsIndexByPage(String startKey, Integer pageSize) {
+        boolean firstTime = false;
+        ++pageSize;
+        if (StringUtils.isBlank(startKey)) {
+            startKey = "0000";
+            firstTime = true;
+            ++pageSize;
+        }
+        Configuration configuration = HBaseConfiguration.create();
+        configuration.set("hbase.zookeeper.quorum", zookeeperQuorum);
+        configuration.set("hbase.zookeeper.property.clientPort", "2181");
+
+        try (Table table = getConnection(configuration).getTable(TableName.valueOf(Context.NEWS_TABLE_INDEX_NAME));
+                Jedis jedis = RedisUtil.getJedisFromPool()) {
+            Filter filter = new PageFilter(pageSize);
+            Scan scan = new Scan();
+            scan.setFilter(filter);
+            scan.setStartRow(Bytes.toBytes(startKey));
+            ResultScanner resultScanner = table.getScanner(scan);
+            Iterator<Result> resultIterable = resultScanner.iterator();
+            List<HotNewsMessage> list = new ArrayList<>();
+            while(resultIterable.hasNext()) {
+                if (firstTime) {
+                    resultIterable.next();
+                    firstTime = false;
+                    continue;
+                }
+                HotNewsMessage hotNewsMessage = JSONObject.parseObject(resultIterable.next().getValue(
+                        Context.HOT_NEWS_TABLE_FA,
+                        Context.HOT_NEWS_TABLE_FA_DATA), HotNewsMessage.class);
+                list.add(hotNewsMessage);
+            }
+            logger.info("load into redis");
+            jedis.sadd("hotNewsSet", list.toArray(new String[0]));
+            String key = null;
+            for (HotNewsMessage message :
+                    list) {
+                key = "hot:" + message.getNid();
+                if (!jedis.exists(key)) {
+                    jedis.set(key, String.valueOf(message.getClicks()));
+                }
+            }
+            return list;
+        } catch (Exception e) {
+            logger.error("get News Index By feeds error");
+            return null;
+        }
+    }
+
     /**
      * 根据 nid 查询用户做的选择
      *
@@ -192,6 +252,7 @@ public class ServiceCore {
         configuration.set("hbase.zookeeper.quorum", zookeeperQuorum);
         configuration.set("hbase.zookeeper.property.clientPort", "2181");
 
+        //TODO 改成批量
         try (Table table = getConnection(configuration).getTable(TableName.valueOf(Context.NEWS_TABLE_NAME))) {
             Get get = new Get(Bytes.toBytes(nid));
             Result result = table.get(get);
