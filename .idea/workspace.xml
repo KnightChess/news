@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5309aa67-fa59-4651-a5b7-a1d6391a1b27" name="Default" comment="add spark job module">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/core/AsyncSimpleIFileAppendService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/core/AsyncSimpleIFileAppendService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/core/FileBeatApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/core/FileBeatApi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bling/target/classes/com/wulingqi/news/bling/controller/TestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bling/target/classes/com/wulingqi/news/bling/controller/TestController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bling/target/classes/com/wulingqi/news/bling/core/TestKafka.class" beforeDir="false" afterPath="$PROJECT_DIR$/bling/target/classes/com/wulingqi/news/bling/core/TestKafka.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/util/DateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/wulingqi/news/util/DateUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/bling.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/bling.log" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -101,8 +97,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/core/FileBeatApi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="41" column="44" lean-forward="true" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
+            <state relative-caret-position="235">
+              <caret line="45" column="37" lean-forward="true" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -419,7 +415,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557474745617" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557474758875" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="D:/software/nodjs/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -615,7 +611,7 @@
       <workItem from="1557132371761" duration="29277000" />
       <workItem from="1557228871587" duration="11000" />
       <workItem from="1557229993732" duration="2598000" />
-      <workItem from="1557235440557" duration="62486000" />
+      <workItem from="1557235440557" duration="62753000" />
     </task>
     <task id="LOCAL-00001" summary="add">
       <created>1554558730565</created>
@@ -652,7 +648,14 @@
       <option name="project" value="LOCAL" />
       <updated>1557461554633</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fix">
+      <created>1557474822192</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1557474822192</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -688,7 +691,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="241990000" />
+    <option name="totallyTimeSpent" value="242257000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="722" extended-state="6" />
@@ -745,17 +748,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add" />
     <MESSAGE value="add all ex controller" />
-    <MESSAGE value="add spark job module" />
     <MESSAGE value="fix and add" />
     <MESSAGE value="add controll" />
-    <option name="LAST_COMMIT_MESSAGE" value="add controll" />
+    <MESSAGE value="add spark job module" />
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/core/FileBeatApi.java</url>
-          <line>30</line>
+          <line>31</line>
           <properties />
           <option name="timeStamp" value="25" />
         </line-breakpoint>
@@ -1193,8 +1197,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bling/src/main/java/com/wulingqi/news/bling/core/FileBeatApi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="41" column="44" lean-forward="true" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
+        <state relative-caret-position="235">
+          <caret line="45" column="37" lean-forward="true" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
