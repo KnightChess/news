@@ -34,15 +34,16 @@ public class DateUtil {
     }
 
     public static int getStrDayOfWeek() {
+        if (dayOfWeek == null) {
+            dayOfWeek = LocalDate.now().getDayOfWeek();
+        }
         return dayOfWeek.getValue();
     }
 
     public static String getStrDateForFile() {
+        if (strDate == null) {
+            strDate = LocalDate.now();
+        }
         return strDate.format(DateTimeFormatter.ofPattern("uuuu-MM-d"));
-    }
-
-    public static void main(String[] args) {
-        LocalDate date = LocalDate.now();
-        System.out.println(date.format(DateTimeFormatter.ofPattern("uuuu-MM-d")));
     }
 }

@@ -1,5 +1,6 @@
 package com.wulingqi.news.bling.controller;
 
+import com.wulingqi.news.bling.core.AsyncSimpleIFileAppendService;
 import com.wulingqi.news.bling.core.ServiceCore;
 import com.wulingqi.news.request.RecommendCondition;
 import com.wulingqi.news.response.Result;
@@ -13,6 +14,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,6 +32,8 @@ public class UserController {
 
     @Autowired
     ServiceCore serviceCore;
+    @Autowired
+    AsyncSimpleIFileAppendService asyncSimpleIFileAppendService;
 
     //TODO 用户注册
     @PostMapping("/register")
@@ -129,14 +133,17 @@ public class UserController {
     }
 
     //TODO 选择某个新闻，返回详细信息
-    @PostMapping("/detail")
+    @GetMapping("/detail")
     public Result getNewsDetail(@RequestParam String nid, @RequestParam String uid) {
         if (StringUtils.isBlank(nid)) {
             logger.info("nid can't be null");
             return Result.fail("nid can't be null");
         }
-        KafkaNewsMessage kafkaNewsMessage = serviceCore.getNewByNid(nid);
+//        KafkaNewsMessage kafkaNewsMessage = serviceCore.getNewByNid(nid);
+        KafkaNewsMessage kafkaNewsMessage = new KafkaNewsMessage();
+        kafkaNewsMessage.setNid("dsfasfd2");
         //TODO 行为日志写入filebeat搜集的本地
+        asyncSimpleIFileAppendService.appendAction(kafkaNewsMessage, uid);
         return Result.success(kafkaNewsMessage);
     }
 }
