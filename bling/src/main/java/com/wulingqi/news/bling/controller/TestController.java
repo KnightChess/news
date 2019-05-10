@@ -17,10 +17,4 @@ public class TestController {
     @Autowired
     private TestKafka testKafka;
 
-    @GetMapping("kafka")
-    public void testKafka() {
-        logger.info("getMapping begin");
-        testKafka.testKafka();
-        logger.info("kafka test over");
-    }
 }

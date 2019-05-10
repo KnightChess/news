@@ -1,6 +1,8 @@
 spring:
   application:
     name: BIGDATA-NEWS
+
+
 server:
   port: 10201
 
