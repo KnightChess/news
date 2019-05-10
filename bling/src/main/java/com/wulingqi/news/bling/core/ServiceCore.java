@@ -21,6 +21,7 @@ import org.apache.hadoop.hbase.filter.PageFilter;
 import org.apache.hadoop.hbase.util.Bytes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.SortingParams;
 
@@ -37,6 +38,7 @@ import java.util.List;
  * Date: 2019-04-07
  * Time: 14:12
  */
+@Service
 public class ServiceCore {
 
     private Logger logger = LoggerFactory.getLogger(ServiceCore.class);
@@ -50,7 +52,7 @@ public class ServiceCore {
      * @param userMessage
      * @return
      */
-    public String register(UserMessage userMessage) {
+    public com.wulingqi.news.response.Result register(UserMessage userMessage) {
         Configuration configuration = HBaseConfiguration.create();
         configuration.set("hbase.zookeeper.quorum", zookeeperQuorum);
         configuration.set("hbase.zookeeper.property.clientPort", "2181");
@@ -59,10 +61,10 @@ public class ServiceCore {
             Put put = new Put(Bytes.toBytes(userMessage.getUid()));
             put.addColumn(Context.USER_TABLE_FA, Context.USER_TABLE_FA_DATA, Bytes.toBytes(JSONObject.toJSONString(userMessage)));
             table.put(put);
-            return "register succeed";
+            return com.wulingqi.news.response.Result.success("register succeed");
         } catch (Exception e) {
             logger.error("can't register");
-            return "register false";
+            return com.wulingqi.news.response.Result.fail("register false");
         }
     }
 
@@ -192,6 +194,14 @@ public class ServiceCore {
 
     //TODO 获取热点新闻索引并写入Redis
     //TODO hot_new表加个starKey为"0000"的
+
+    /**
+     * 获取热点新闻索引并写入Redis
+     *
+     * @param startKey
+     * @param pageSize
+     * @return
+     */
     public List<HotNewsMessage> getHotNewsIndexByPage(String startKey, Integer pageSize) {
         boolean firstTime = false;
         ++pageSize;
@@ -252,19 +262,17 @@ public class ServiceCore {
         configuration.set("hbase.zookeeper.quorum", zookeeperQuorum);
         configuration.set("hbase.zookeeper.property.clientPort", "2181");
 
-        //TODO 改成批量
         try (Table table = getConnection(configuration).getTable(TableName.valueOf(Context.NEWS_TABLE_NAME))) {
             Get get = new Get(Bytes.toBytes(nid));
             Result result = table.get(get);
             List<Cell> cells = result.getColumnCells(Context.NEWS_TABLE_FA, Context.NEWS_TABLE_FA_DATA);
             if (cells.isEmpty()) {
-                logger.info("{} is not exist", nid);
+                logger.info("没有 {} 的详细内容，新闻不存在", nid);
                 return null;
             }
             Cell cell = cells.get(0);
             String message = Arrays.toString(CellUtil.cloneValue(cell));
-            KafkaNewsMessage kafkaNewsMessage = JSONObject.parseObject(message, KafkaNewsMessage.class);
-            return kafkaNewsMessage;
+            return JSONObject.parseObject(message, KafkaNewsMessage.class);
         } catch (Exception e) {
             logger.error("can't get detail new to server");
             return null;

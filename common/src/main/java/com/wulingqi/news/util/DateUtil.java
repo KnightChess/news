@@ -1,6 +1,8 @@
 package com.wulingqi.news.util;
 
 import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,6 +15,8 @@ public class DateUtil {
 
     private static DayOfWeek dayOfWeek;
 
+    private static LocalDate strDate;
+
     public static DayOfWeek getDayOfWeek() {
         return dayOfWeek;
     }
@@ -21,7 +25,24 @@ public class DateUtil {
         DateUtil.dayOfWeek = dayOfWeek;
     }
 
-    public static int getDayValue() {
+    public static LocalDate getStrDate() {
+        return strDate;
+    }
+
+    public static void setStrDate(LocalDate strDate) {
+        DateUtil.strDate = strDate;
+    }
+
+    public static int getStrDayOfWeek() {
         return dayOfWeek.getValue();
+    }
+
+    public static String getStrDateForFile() {
+        return strDate.format(DateTimeFormatter.ofPattern("uuuu-MM-d"));
+    }
+
+    public static void main(String[] args) {
+        LocalDate date = LocalDate.now();
+        System.out.println(date.format(DateTimeFormatter.ofPattern("uuuu-MM-d")));
     }
 }

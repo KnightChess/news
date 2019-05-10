@@ -4,7 +4,6 @@ import com.wulingqi.news.util.DateUtil;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import java.time.DayOfWeek;
 import java.time.LocalDate;
 
 /**
@@ -22,8 +21,11 @@ public class SimpleTask {
         DateUtil.setDayOfWeek(LocalDate.now().getDayOfWeek());
     }
 
-    //TODO 每两天定时清理redis数据(日期前缀)
+    @Scheduled(cron = "0 0 0 * * ?")
+    public void reflushFilPreDate() {
+        DateUtil.setStrDate(LocalDate.now());
+    }
 
-    //TODO hbase热点索引数据加载进Redis
+    //TODO 每两天定时清理redis数据(日期前缀)
 
 }

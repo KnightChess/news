@@ -23,6 +23,7 @@ import org.slf4j.LoggerFactory;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
+import scala.util.parsing.json.JSON;
 
 import java.io.IOException;
 import java.util.*;
@@ -171,7 +172,9 @@ public class Kafka2Redis {
             // 行为日志写入redis，包括hotNewsSet和用户feed的增加
             while(stringIterator.hasNext()) {
                 String string = stringIterator.next();
-                KafkaUserMessage kafkaUserMessage = JSONObject.parseObject(string, KafkaUserMessage.class);
+                logger.info("----------------String {}", string);
+                JSONObject jsonObject = JSONObject.parseObject(string);
+                KafkaUserMessage kafkaUserMessage = JSONObject.parseObject(jsonObject.getString("message"), KafkaUserMessage.class);
                 // 所有用户近期访问的新闻数据
                 jedis.sadd("hotNewsSet", kafkaUserMessage.getNid());
                 // 所有近期新闻数据的点击量+1
