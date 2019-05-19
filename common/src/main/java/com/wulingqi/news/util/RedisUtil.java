@@ -8,8 +8,6 @@ import redis.clients.jedis.JedisPoolConfig;
  * Created with IntelliJ IDEA.
  *
  * @author wulingqi
- * @date 2019-04-07
- * @time 15:16
  */
 public class RedisUtil {
 
@@ -20,7 +18,7 @@ public class RedisUtil {
         jedisPoolConfig.setMaxTotal(8);
         jedisPoolConfig.setMaxIdle(8);
         jedisPoolConfig.setMinIdle(0);
-        pool = new JedisPool(jedisPoolConfig, "localhost", 6379, 3000);
+        pool = new JedisPool(jedisPoolConfig, "slave5", 6379, 3000);
     }
 
     public static Jedis getJedisFromPool() {

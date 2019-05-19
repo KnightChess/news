@@ -2,14 +2,11 @@ package com.wulingqi.news.vo;
 
 
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 
 /**
  * Created with IntelliJ IDEA.
  * Description:
  * Author: wulingqi
- * Date: 2019-04-06
- * Time: 14:42
  */
 public class NewsIndexMessage {
 

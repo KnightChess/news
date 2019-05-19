@@ -1,17 +1,13 @@
 package com.wulingqi.news.vo;
 
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
  * Created with IntelliJ IDEA.
  * Description:
  * Author: wulingqi
- * Date: 2019-04-03
- * Time: 16:22
  */
 public class KafkaNewsMessage {
 

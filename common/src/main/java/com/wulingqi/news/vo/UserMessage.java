@@ -4,8 +4,6 @@ package com.wulingqi.news.vo;
  * Created with IntelliJ IDEA.
  * Description:
  * Author: wulingqi
- * Date: 2019-04-07
- * Time: 14:40
  */
 public class UserMessage {
 

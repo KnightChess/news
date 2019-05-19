@@ -38,8 +38,6 @@ import java.util.concurrent.CountDownLatch;
  * Created with IntelliJ IDEA.
  * Description:
  * Author: wulingqi
- * Date: 2019-04-02
- * Time: 21:11
  */
 public class Kafka2Hbase {
 
@@ -178,8 +176,9 @@ public class Kafka2Hbase {
             List<Put> putReals = new ArrayList<>();
             List<Put> putIndexs = new ArrayList<>();
             while (stringIterator.hasNext()) {
-                JSONObject object = JSONObject.parseObject(stringIterator.next());
-                kafkaNewsMessage = object.toJavaObject(KafkaNewsMessage.class);
+                String string = stringIterator.next();
+                JSONObject jsonObject = JSONObject.parseObject(string);
+                kafkaNewsMessage = JSONObject.parseObject(jsonObject.getString("message"), KafkaNewsMessage.class);
 
                 Put putReal = new Put(Bytes.toBytes(kafkaNewsMessage.getNid()));
                 putReal.addColumn(Context.NEWS_TABLE_FA, Context.NEWS_TABLE_FA_DATA, Bytes.toBytes(JSON.toJSONString(kafkaNewsMessage)));
@@ -188,6 +187,7 @@ public class Kafka2Hbase {
                 kafkaNewsIndexMessage.setDate(kafkaNewsMessage.getDate());
                 kafkaNewsIndexMessage.setNid(kafkaNewsMessage.getNid());
                 kafkaNewsIndexMessage.setTitle(kafkaNewsMessage.getTitle());
+                //TODO 添加时间key是为了让最新的新闻排在前面，但是这里的key时间不太对，需要调整
                 Put putIndex = new Put(Bytes.toBytes(TopNAlogrithm.getKeyByFeeds(kafkaNewsMessage.getFeeds(), kafkaNewsMessage.getNid(), kafkaNewsMessage.getDate())));
                 putIndex.addColumn(Context.NEWS_TABLE_INDEX_FA, Context.NEWS_TABLE_INDEX_FA_DATA, Bytes.toBytes(JSON.toJSONString(kafkaNewsIndexMessage)));
 

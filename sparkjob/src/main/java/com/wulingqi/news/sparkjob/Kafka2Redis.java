@@ -23,18 +23,17 @@ import org.slf4j.LoggerFactory;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
-import scala.util.parsing.json.JSON;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 
 /**
  * Created with IntelliJ IDEA.
  * Description:
  * Author: wulingqi
- * Date: 2019-04-03
- * Time: 18:40
  */
 public class Kafka2Redis {
 
@@ -45,11 +44,12 @@ public class Kafka2Redis {
     // 1, 日志地址
     // 2,
 //    private static String kafkaBroker = "slave3:9092,slave4:9092,slave5:9092";
-    private static String kafkaBroker = "localhost:9092";
+    private static String kafkaBroker = "192.168.149.136:9092,192.168.149.137:9092,192.168.149.138:9092";
+//    private static String kafkaBroker = "localhost:9092";
 
     /** zookeeper 服务地址，ip:port，多个地址用逗号隔开 */
-//    private static final String SERVER_ADDRESS = "master:2181,slave3:2181,slave4:2181";
-    private static final String SERVER_ADDRESS = "localhost:2181";
+    private static final String SERVER_ADDRESS = "192.168.149.133:2181,192.168.149.136:2181,192.168.149.137:2181";
+//    private static final String SERVER_ADDRESS = "localhost:2181";
     /** 超时时间，毫秒为单位 */
     private static final Integer TIMEOUT_MS = 60000;
     /** 节点名 */
@@ -61,7 +61,7 @@ public class Kafka2Redis {
         jedisPoolConfig.setMaxIdle(8);
         jedisPoolConfig.setMaxTotal(8);
         jedisPoolConfig.setMinIdle(0);
-        pool = new JedisPool(jedisPoolConfig, "localhost", 6379, 3000);
+        pool = new JedisPool(jedisPoolConfig, "192.168.149.138", 6379, 3000);
 
         try {
             zk = new ZooKeeper(SERVER_ADDRESS, TIMEOUT_MS, null);

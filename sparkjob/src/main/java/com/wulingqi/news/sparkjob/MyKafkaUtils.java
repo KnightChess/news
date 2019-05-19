@@ -15,8 +15,6 @@ import java.util.Map;
  * Created with IntelliJ IDEA.
  *
  * @author wulingqi
- * @date 2019-05-06
- * @time 14:21
  */
 public class MyKafkaUtils {
 

@@ -4,8 +4,6 @@ package com.wulingqi.news.vo;
  * Created with IntelliJ IDEA.
  *
  * @author wulingqi
- * @date 2019-05-08
- * @time 16:41
  */
 public class HotNewsMessage {
 

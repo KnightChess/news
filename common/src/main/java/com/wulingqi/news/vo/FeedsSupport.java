@@ -7,8 +7,6 @@ import java.util.Map;
  * Created with IntelliJ IDEA.
  * Description:
  * Author: wulingqi
- * Date: 2019-04-03
- * Time: 16:51
  */
 public class FeedsSupport {
 

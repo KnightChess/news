@@ -8,13 +8,13 @@ import com.wulingqi.news.vo.HotNewsMessage;
 import com.wulingqi.news.vo.KafkaNewsMessage;
 import com.wulingqi.news.vo.NewsIndexMessage;
 import com.wulingqi.news.vo.UserMessage;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,8 +22,6 @@ import java.util.List;
  * Created with IntelliJ IDEA.
  *
  * @author wulingqi
- * @date 2019-04-07
- * @time 21:00
  */
 @RestController
 @RequestMapping("news")
@@ -44,7 +42,7 @@ public class UserController {
     }
     //TODO 用户登录，然后判断是否冷启动操作，冷启动纯热点推荐，非冷启动混合推荐，返回两种推荐的EndKey
     //TODO token?
-    @PostMapping("/loginInit")
+    @GetMapping("/loginInit")
     public Result userLoginAndInit(@RequestParam String uid,
                                    @RequestParam String password,
                                    @RequestParam(defaultValue = "10") Integer pageSize) {
@@ -52,8 +50,9 @@ public class UserController {
             logger.info("uid or password can't be null");
             return Result.fail("uid or password can't be null");
         }
+        uid = DigestUtils.md5Hex(uid);
         UserMessage userMessage = serviceCore.getUserMessageById(uid);
-        if (userMessage == null || !password.equals(userMessage.getPassword())) {
+        if (userMessage == null || !DigestUtils.md5Hex(password).equals(userMessage.getPassword())) {
             logger.info("用户名或者密码错误");
             return Result.fail("用户名或者密码错误");
         }
@@ -67,7 +66,7 @@ public class UserController {
         } else {
             // 混合推荐
             List<HotNewsMessage> hotNewsList = serviceCore.getHotNewsIndexByPage("0000", pageSize/2);
-            List<NewsIndexMessage> newsIndexList = serviceCore.getNewsIndexByFeeds(feeds, "0", (pageSize + 1)/2);
+            List<NewsIndexMessage> newsIndexList = serviceCore.getNewsIndexByFeeds(feeds, "", (pageSize + 1)/2);
             List<Object> all = new ArrayList<>(hotNewsList.size() + newsIndexList.size() + 4);
             all.addAll(newsIndexList);
             all.addAll(hotNewsList);
@@ -139,9 +138,8 @@ public class UserController {
             logger.info("nid can't be null");
             return Result.fail("nid can't be null");
         }
-//        KafkaNewsMessage kafkaNewsMessage = serviceCore.getNewByNid(nid);
-        KafkaNewsMessage kafkaNewsMessage = new KafkaNewsMessage();
-        kafkaNewsMessage.setNid("dsfasfd2");
+        uid = DigestUtils.md5Hex(uid);
+        KafkaNewsMessage kafkaNewsMessage = serviceCore.getNewByNid(nid);
         //TODO 行为日志写入filebeat搜集的本地
         asyncSimpleIFileAppendService.appendAction(kafkaNewsMessage, uid);
         return Result.success(kafkaNewsMessage);

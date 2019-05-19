@@ -9,6 +9,7 @@ import com.wulingqi.news.vo.HotNewsMessage;
 import com.wulingqi.news.vo.KafkaNewsMessage;
 import com.wulingqi.news.vo.NewsIndexMessage;
 import com.wulingqi.news.vo.UserMessage;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.Cell;
@@ -27,16 +28,14 @@ import redis.clients.jedis.SortingParams;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created with IntelliJ IDEA.
  * Description:
  * Author: wulingqi
- * Date: 2019-04-07
- * Time: 14:12
  */
 @Service
 public class ServiceCore {
@@ -44,7 +43,7 @@ public class ServiceCore {
     private Logger logger = LoggerFactory.getLogger(ServiceCore.class);
 
     Connection connection = null;
-    private static String zookeeperQuorum = "xxxx,aaaa,kkkk";
+    private static String zookeeperQuorum = "master,slave3,slave4";
 
     /**
      * 注册
@@ -58,12 +57,12 @@ public class ServiceCore {
         configuration.set("hbase.zookeeper.property.clientPort", "2181");
 
         try (Table table = getConnection(configuration).getTable(TableName.valueOf(Context.USER_TABLE_NAME))) {
-            Put put = new Put(Bytes.toBytes(userMessage.getUid()));
+            Put put = new Put(Bytes.toBytes(DigestUtils.md5Hex(userMessage.getUid())));
             put.addColumn(Context.USER_TABLE_FA, Context.USER_TABLE_FA_DATA, Bytes.toBytes(JSONObject.toJSONString(userMessage)));
             table.put(put);
             return com.wulingqi.news.response.Result.success("register succeed");
         } catch (Exception e) {
-            logger.error("can't register");
+            logger.error("can't register", e);
             return com.wulingqi.news.response.Result.fail("register false");
         }
     }
@@ -90,7 +89,7 @@ public class ServiceCore {
             Cell cell = null;
             if (!cells.isEmpty()) {
                 cell = cells.get(0);
-                String message = Arrays.toString(CellUtil.cloneValue(cell));
+                String message = Bytes.toString(CellUtil.cloneValue(cell));
                 userMessage = JSONObject.parseObject(message, UserMessage.class);
             }
             return userMessage;
@@ -131,13 +130,13 @@ public class ServiceCore {
                     return null;
                 }
                 Cell cell = cells.get(0);
-                String message = Arrays.toString(CellUtil.cloneValue(cell));
+                String message = Bytes.toString(CellUtil.cloneValue(cell));
                 List<String> feeds = JSONArray.parseArray(message, String.class);
                 jedis.sadd(uid + ":feedSet", feeds.toArray(new String[0]));
                 return feeds;
             }
         } catch (Exception e) {
-            logger.error("there is something wrong in get feed from hbase or redis");
+            logger.error("there is something wrong in get feed from hbase or redis", e);
             return null;
         } finally {
             jedis.close();
@@ -162,6 +161,8 @@ public class ServiceCore {
             firstTime = true;
             ++pageSize;
         }
+        String endKey = String.valueOf(Long.valueOf(startKey) + 1) + "|0000";
+        startKey = startKey + "|0000";
         Configuration configuration = HBaseConfiguration.create();
         configuration.set("hbase.zookeeper.quorum", zookeeperQuorum);
         configuration.set("hbase.zookeeper.property.clientPort", "2181");
@@ -171,6 +172,7 @@ public class ServiceCore {
             Scan scan = new Scan();
             scan.setFilter(filter);
             scan.setStartRow(Bytes.toBytes(startKey));
+            scan.setStopRow(Bytes.toBytes(endKey));
             ResultScanner resultScanner = table.getScanner(scan);
             Iterator<Result> resultIterable = resultScanner.iterator();
             List<NewsIndexMessage> list = new ArrayList<>();
@@ -187,7 +189,7 @@ public class ServiceCore {
             }
             return list;
         } catch (Exception e) {
-            logger.error("get News Index By feeds error");
+            logger.error("get News Index By feeds error", e);
             return null;
         }
     }
@@ -214,7 +216,7 @@ public class ServiceCore {
         configuration.set("hbase.zookeeper.quorum", zookeeperQuorum);
         configuration.set("hbase.zookeeper.property.clientPort", "2181");
 
-        try (Table table = getConnection(configuration).getTable(TableName.valueOf(Context.NEWS_TABLE_INDEX_NAME));
+        try (Table table = getConnection(configuration).getTable(TableName.valueOf(Context.HOT_NEWS_TABLE_NAME));
                 Jedis jedis = RedisUtil.getJedisFromPool()) {
             Filter filter = new PageFilter(pageSize);
             Scan scan = new Scan();
@@ -232,10 +234,12 @@ public class ServiceCore {
                 HotNewsMessage hotNewsMessage = JSONObject.parseObject(resultIterable.next().getValue(
                         Context.HOT_NEWS_TABLE_FA,
                         Context.HOT_NEWS_TABLE_FA_DATA), HotNewsMessage.class);
+                logger.info(JSONObject.toJSONString(hotNewsMessage));
                 list.add(hotNewsMessage);
             }
             logger.info("load into redis");
-            jedis.sadd("hotNewsSet", list.toArray(new String[0]));
+            List<String> nidList = list.stream().map(HotNewsMessage::getNid).collect(Collectors.toList());
+            jedis.sadd("hotNewsSet", nidList.toArray(new String[0]));
             String key = null;
             for (HotNewsMessage message :
                     list) {
@@ -246,7 +250,7 @@ public class ServiceCore {
             }
             return list;
         } catch (Exception e) {
-            logger.error("get News Index By feeds error");
+            logger.error("get News Index By feeds error", e);
             return null;
         }
     }
@@ -271,10 +275,10 @@ public class ServiceCore {
                 return null;
             }
             Cell cell = cells.get(0);
-            String message = Arrays.toString(CellUtil.cloneValue(cell));
+            String message = Bytes.toString(CellUtil.cloneValue(cell));
             return JSONObject.parseObject(message, KafkaNewsMessage.class);
         } catch (Exception e) {
-            logger.error("can't get detail new to server");
+            logger.error("can't get detail new to server", e);
             return null;
         }
     }
