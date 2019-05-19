@@ -14,9 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -39,13 +37,13 @@ public class BlingTest {
     @Autowired
     Redis2Hbase redis2Hbase;
 
-    @Test
-    public void testRedis2Hbase() {
-//        redis2Hbase.setSomeTestData();
-        redis2Hbase.init();
-        redis2Hbase.testPitch();
-        redis2Hbase.test();
-    }
+//    public void testRedis2Hbase() {
+////        redis2Hbase.setSomeTestData();
+//        redis2Hbase.init();
+//        redis2Hbase.testPitch();
+//        redis2Hbase.test();
+//    } @Test
+
 
     @Test
     public void test() {

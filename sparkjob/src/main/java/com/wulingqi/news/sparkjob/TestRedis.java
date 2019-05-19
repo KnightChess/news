@@ -2,9 +2,6 @@ package com.wulingqi.news.sparkjob;
 
 import com.alibaba.fastjson.JSON;
 import com.wulingqi.news.vo.KafkaUserMessage;
-import redis.clients.jedis.Jedis;
-import redis.clients.jedis.JedisPool;
-import redis.clients.jedis.JedisPoolConfig;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -13,8 +10,6 @@ import java.util.Arrays;
  * Created with IntelliJ IDEA.
  *
  * @author wulingqi
- * @date 2019-05-07
- * @time 14:57
  */
 public class TestRedis {
 
@@ -29,7 +24,7 @@ public class TestRedis {
 //        }
         KafkaUserMessage kafkaUserMessage = new KafkaUserMessage();
         kafkaUserMessage.setUid("213213");
-        kafkaUserMessage.setNid("dsfasfd");
+        kafkaUserMessage.setNid("{\"date\":\"2019-05-07T18:10:33.856\",\"feeds\":[\"apple\",\"pear\"],\"nid\":\"dsfasfd2\",\"uid\":\"2132131\"}\n");
         kafkaUserMessage.setDate(LocalDateTime.now());
         kafkaUserMessage.setFeeds(Arrays.asList("apple", "banana"));
         System.out.println(JSON.toJSONString(kafkaUserMessage));

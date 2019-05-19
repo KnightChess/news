@@ -4,8 +4,6 @@ package com.wulingqi.news.request;
  * Created with IntelliJ IDEA.
  *
  * @author wulingqi
- * @date 2019-05-09
- * @time 19:55
  */
 public class RecommendCondition {
 

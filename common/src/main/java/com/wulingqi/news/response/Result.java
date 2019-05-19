@@ -10,8 +10,6 @@ import java.io.Serializable;
  * Created with IntelliJ IDEA.
  *
  * @author wulingqi
- * @date 2019-05-09
- * @time 17:50
  */
 public class Result<T> implements Serializable {
 

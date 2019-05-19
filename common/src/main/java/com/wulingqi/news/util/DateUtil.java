@@ -8,8 +8,6 @@ import java.time.format.DateTimeFormatter;
  * Created with IntelliJ IDEA.
  * Description:
  * Author: wulingqi
- * Date: 2019-04-06
- * Time: 20:58
  */
 public class DateUtil {
 

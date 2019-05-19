@@ -2,15 +2,12 @@ package com.wulingqi.news.vo;
 
 import com.alibaba.fastjson.JSON;
 
-import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
  * Description:
  * Author: wulingqi
- * Date: 2019-04-04
- * Time: 10:06
  */
 public class UserMoudle {
 

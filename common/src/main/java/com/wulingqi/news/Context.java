@@ -6,8 +6,6 @@ import org.apache.hadoop.hbase.util.Bytes;
  * Created with IntelliJ IDEA.
  * Description:
  * Author: wulingqi
- * Date: 2019-04-03
- * Time: 17:20
  */
 public interface Context {
 

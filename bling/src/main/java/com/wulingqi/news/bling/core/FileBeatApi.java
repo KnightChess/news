@@ -12,21 +12,18 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.charset.Charset;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 /**
  * Created with IntelliJ IDEA.
  *
  * @author wulingqi
- * @date 2019-05-10
- * @time 11:45
  */
 public class FileBeatApi {
 
     private static Logger logger = LoggerFactory.getLogger(FileBeatApi.class);
 
-    private static String kafkaDataPath = "/Users/mfw/tmp/test/";
+    private static String kafkaDataPath = "/home/hyxy/tmp/logData/";
 
     public static void submitUserAction(KafkaNewsMessage kafkaNewsMessage, String uid) {
         logger.info("begin write action {}", DateUtil.getStrDateForFile());
@@ -37,8 +34,8 @@ public class FileBeatApi {
             fileOutputStream = new FileOutputStream(new File(fileDataAbsPath), true);
             KafkaUserMessage kafkaUserMessage = new KafkaUserMessage();
             kafkaUserMessage.setUid(uid);
-            kafkaUserMessage.setNid(kafkaUserMessage.getNid());
-            kafkaUserMessage.setFeeds(kafkaUserMessage.getFeeds());
+            kafkaUserMessage.setNid(kafkaNewsMessage.getNid());
+            kafkaUserMessage.setFeeds(kafkaNewsMessage.getFeeds());
             kafkaUserMessage.setDate(LocalDateTime.now());
             byte[] data = (JSONObject.toJSONString(kafkaUserMessage, SerializerFeature.WriteMapNullValue) + "\n").getBytes(Charset.forName("utf-8"));
             fileOutputStream.write(data);

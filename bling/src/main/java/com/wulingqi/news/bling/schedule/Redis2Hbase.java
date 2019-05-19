@@ -13,7 +13,8 @@ import org.apache.hadoop.hbase.client.Table;
 import org.apache.hadoop.hbase.util.Bytes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
 import redis.clients.jedis.*;
 
 import java.io.IOException;
@@ -26,24 +27,22 @@ import java.util.stream.Collectors;
  * Created with IntelliJ IDEA.
  * Description:
  * Author: wulingqi
- * Date: 2019-04-03
- * Time: 18:41
  */
-@Service
+@Component
 public class Redis2Hbase {
 
     private Logger logger = LoggerFactory.getLogger(Redis2Hbase.class);
 
     private static JedisPool pool = null;
     private static Connection connection = null;
-    private static String zookeeperQuorum = "xxxx,aaaa,kkkk";
+    private static String zookeeperQuorum = "master,slave3,slave4";
 
-    public void init() {
+    static {
         JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
         jedisPoolConfig.setMaxIdle(8);
         jedisPoolConfig.setMaxTotal(8);
         jedisPoolConfig.setMinIdle(0);
-        pool = new JedisPool(jedisPoolConfig, "localhost", 6379, 3000);
+        pool = new JedisPool(jedisPoolConfig, "slave5", 6379, 3000);
     }
 
     //TODO 60分钟入录一次
@@ -52,6 +51,7 @@ public class Redis2Hbase {
      *
      * @throws Exception
      */
+    @Scheduled(cron = "0 * * * * ?")
     public void userMoudleRedis2Hbase() {
         logger.info("begin load userMoudle to hbase");
         Configuration configuration = HBaseConfiguration.create();
@@ -60,7 +60,7 @@ public class Redis2Hbase {
 
         Map<String, List<String>> result = new HashMap<>();
         try (Jedis jedis = pool.getResource()) {
-            List<String> users = jedis.lrange("uidSet", 0, -1);
+            Set<String> users = jedis.smembers("uidSet");
             for (String user :
                     users) {
                 SortingParams params = new SortingParams()
@@ -81,6 +81,7 @@ public class Redis2Hbase {
             List<Put> list = new ArrayList<>();
             for (Map.Entry<String, List<String>> entry :
                     result.entrySet()) {
+                if (entry.getValue().size() < 1) continue;
                 Put put = new Put(Bytes.toBytes(entry.getKey()));
                 put.addColumn(Context.USER_FEED_TABLE_FA, Context.USER_FEED_TABLE_FA_DATA, Bytes.toBytes(JSON.toJSONString(entry.getValue())));
                 list.add(put);
@@ -94,6 +95,7 @@ public class Redis2Hbase {
     }
 
     //TODO 热点新闻入录hbase，也是一天一次
+    @Scheduled(cron = "0 0 0 * * ?")
     public void hotNewsRedis2Hbase() {
         logger.info("begin load hotNews to hbase");
         Configuration configuration = HBaseConfiguration.create();
